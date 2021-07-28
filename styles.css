@@ -109,7 +109,7 @@ ul, ol {
 .hero__content {
     display: flex;
     justify-content: center;
-    min-height: calc(80vh - var(--nav-height));
+    min-height: calc(100vh - var(--nav-height));
     align-items: center;
 }
 
@@ -281,7 +281,6 @@ ul, ol {
 
     .hero__content {
         justify-content: space-between;
-        min-height: calc(100vh - var(--nav-height));
     }
 
     .hero__title {
