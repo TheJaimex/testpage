@@ -17,7 +17,13 @@
 
     /* HERO SECTION */
     --hero-title-color: white;
+
+    /* PROJECT SECTION */
+    --project-separator-height: 0.4em;
+    --projects-list-margin-between: 6em;
 }
+
+/* USAR LOS CSS NORMALIZED */
 
 *, *::before, *::after {
     margin: 0;
@@ -52,7 +58,6 @@ ul, ol {
     color: var(--section-title-color);
 }
 
-
 /* BARRA NAVEGACION */
 
 .nav {
@@ -80,26 +85,31 @@ ul, ol {
     color: var(--nav-button-textColor);
 }
 
-
-
 /* CONTENIDO */
 
 .content {
     display: flex;
     flex-direction: column;
     margin-top: var(--nav-height);
+}
+
+.hero__content, .projects__content, .contact__content {
     padding: 0 var(--white-space);
+}
+
+.projects, .contact {
+    margin-top: 5em;
 }
 
 /* HERO SECTION */
 
-.hero {
+.hero__content {
     display: flex;
     justify-content: center;
-    padding: 10vh 0 12vh 0;
+    padding-top: 5em;
 }
 
-.hero__content {
+.hero__main {
     display: flex;
     flex-direction: column;
     row-gap: 3rem;
@@ -108,6 +118,7 @@ ul, ol {
 .hero__title {
     font-size: 3rem;
     font-weight: 900;
+    text-align: center;
     color: var(--hero-title-color);
 }
 
@@ -135,16 +146,12 @@ ul, ol {
     color: #FFCA4E;
 }
 
-
-.hero__illustration {
-    display: none;
-}
-
 .hero__html {
     width: 30rem;
 }
 
 .hero__illustration--2 {
+    display: none;
     justify-self: center;
 }
 
@@ -152,44 +159,96 @@ ul, ol {
     height: 42.5rem;
 }
 
-.projects {
+/* FEATURED PROJECTS SECTION */
+
+.projects__banner {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    background: white;
+    padding: 2.25rem 2.5rem 2.25rem 0;
+    width: calc(100% - var(--white-space));
+    border-radius: 0 2em 2em 0;
+    column-gap: 2em;
+}
+
+.projects__title {
+    font-size: 2rem;
+    font-weight: bolder;
+    min-width: max-content;
+}
+
+.projects__decoration--left {
+    background: #111111;
+    width: var(--white-space);
+    border-radius: 0 0.75em 0.75em 0;
+}
+
+.projects__decoration--right {
+    background: #111111;
+    flex-grow: 1;
+    border-radius: 0.75em;
+}
+
+.projects__project::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: var(--project-separator-height);
+    border-radius: 0.5em;
+    background: #303030;
+    top: calc((var(--projects-list-margin-between)/-2) + (var(--project-separator-height)/-2));
 }
 
 .projects__project {
+    position: relative;
+    margin-top: var(--projects-list-margin-between);
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
+    flex-direction: column-reverse;
+    justify-content: space-between;
     align-items: center;
-    width: 80vw;
 }
 
-.projects__info {
+.project__info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    align-items: center;
+}
+
+.project__banner {
+    height: fit-content;
+}
+
+.project__banner canvas {
     background: white;
 }
 
+/* MEDIA QUERIES */
 
 @media screen and (min-width: 800px) {
     :root {
         --white-space: 7.5rem;
         --nav-height: 70px;
+
+        --project-separator-height: 0.3em;
+        --projects-list-margin-between: 7.5em;
     }
 
-    .hero {
-        padding: 0;
+    .hero__content {
+        padding-top: 0;
+        padding-bottom: 0;
         justify-content: space-between;
         align-items: center;
-        min-height: calc(100vh - var(--nav-height));
+        min-height: calc(50vh - var(--nav-height));
     }
 
     .hero__title {
         font-size: 3.5rem;
+        text-align: left;
     }
 
 
-    .hero__illustration {
+    .hero__illustration--2 {
         display: block;
     }
 }
@@ -198,15 +257,23 @@ ul, ol {
     html {
         font-size: 13px;
     }
+
+    .projects__project {
+        flex-direction: row-reverse;
+    }
 }
 
 @media screen and (min-width: 1400px) {
     html {
         font-size: 17.5px;
     }
+
+    .hero__content {
+        min-height: calc(100vh - var(--nav-height));
+    }
 }
 
-@media screen and (min-width: 1700px) {
+@media screen and (min-width: 1750px) {
     html {
         font-size: 22.5px;
     }
