@@ -221,8 +221,8 @@ ul, ol {
 
 #projectImage {
     background: #111111;
-    width: 36rem;
-    height: 20.25rem;
+    width: calc(36rem - 2*(16/9)*var(--white-space));
+    height: calc(20.25rem - 2*(9/16)*var(--white-space));
 }
 
 
