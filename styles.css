@@ -221,7 +221,7 @@ ul, ol {
 
 #projectImage {
     background: white;
-    aspect-ratio: auto 36rem / 20.25rem;
+    aspect-ratio: 36rem / 20.25rem;
     width: 36rem;
     height: 20.25rem;
 }
@@ -260,7 +260,7 @@ ul, ol {
 
     #projectImage {
         background: white;
-        aspect-ratio: auto 48rem / 27rem;
+        aspect-ratio: 48rem / 27rem;
         width: 48rem;
         height: 27rem;
     }
@@ -293,7 +293,7 @@ ul, ol {
 
     #projectImage {
         background: white;
-        aspect-ratio: auto 44rem / 24.75rem;
+        aspect-ratio: 44rem / 24.75rem;
         width: 44rem;
         height: 24.75rem;
     }
