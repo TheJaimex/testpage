@@ -1,4 +1,4 @@
-/* MADE BY JAIME, 2021, COPYRIGHT: ALL RIGHTS RESERVeED */
+/* MADE BY JAIME, 2021, COPYRIGHT: ALL RIGHTS RESERVED */
 
 :root {
     --nav-height: 50px;
@@ -219,9 +219,14 @@ ul, ol {
     height: fit-content;
 }
 
-.project__banner canvas {
+#projectImage {
     background: white;
+    width: 36rem;
+    height: 20.25rem;
 }
+
+
+
 
 /* MEDIA QUERIES */
 
@@ -251,6 +256,12 @@ ul, ol {
     .hero__illustration--2 {
         display: block;
     }
+
+    #projectImage {
+        background: white;
+        width: 48rem;
+        height: 27rem;
+    }
 }
 
 @media screen and (min-width: 1050px) {
@@ -276,5 +287,11 @@ ul, ol {
 @media screen and (min-width: 1750px) {
     html {
         font-size: 22.5px;
+    }
+
+    #projectImage {
+        background: white;
+        width: 44rem;
+        height: 24.75rem;
     }
 }
