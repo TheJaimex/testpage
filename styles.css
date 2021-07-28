@@ -93,7 +93,6 @@ ul, ol {
 .content {
     display: flex;
     flex-direction: column;
-    margin-top: var(--nav-height);
 }
 
 .projects, .contact {
@@ -109,7 +108,7 @@ ul, ol {
 .hero__content {
     display: flex;
     justify-content: center;
-    min-height: 80vh;
+    min-height: calc(100vh - var(--nav-height));
     align-items: center;
 }
 
@@ -281,9 +280,12 @@ ul, ol {
         font-size: 16px;
     }
 
+    .content {
+        margin-top: var(--nav-height);
+    }
+
     .hero__content {
         justify-content: space-between;
-        min-height: calc(100vh - var(--nav-height));
     }
 
     .hero__title {
