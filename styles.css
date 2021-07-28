@@ -109,7 +109,7 @@ ul, ol {
 .hero__content {
     display: flex;
     justify-content: center;
-    min-height: calc(100vh - var(--nav-height));
+    min-height: calc(90vh - var(--nav-height));
     align-items: center;
 }
 
@@ -256,6 +256,10 @@ ul, ol {
 }
 
 @media screen and (min-width: 850px) {
+    :root {
+        --nav-height: 70px;
+    }
+
     html {
         font-size: 16px;
     }
@@ -266,8 +270,7 @@ ul, ol {
 @media screen and (min-width: 1250px) {
     :root {
         --white-space: 7.5rem;
-        --nav-height: 70px;
-
+        /*--nav-height: 75px; PENSARLO porque quizás los botones sean muy peques*/
         --project-separator-height: 0.2em;
         --projects-list-margin-between: 7.5em;
     }
@@ -278,6 +281,7 @@ ul, ol {
 
     .hero__content {
         justify-content: space-between;
+        min-height: calc(100vh - var(--nav-height));
     }
 
     .hero__title {
