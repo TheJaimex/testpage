@@ -135,11 +135,11 @@ ul, ol {
 .hero__button {
     font-size: 1.5rem;
     font-weight: bold;
-    padding: 0.5em 2em;
 }
 
 .hero__button--mywork {
     border-radius: 1.5em;
+    padding: 0.5em 1.85em;
     background: #E16161;
     border: 0;
     color: white;
@@ -147,6 +147,8 @@ ul, ol {
 
 .hero__button--meetme {
     color: #FFCA4E;
+    padding: 0.25em 0.5em;
+    margin-left: 1.75em;
 }
 
 .hero__html {
