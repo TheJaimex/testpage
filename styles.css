@@ -70,6 +70,7 @@ ul, ol {
     height: var(--nav-height);
     background: #111111;
     padding: 0 var(--white-space);
+    z-index: 200;
 }
 
 .nav__logo {
