@@ -116,7 +116,8 @@ ul, ol {
 .hero__main {
     display: flex;
     flex-direction: column;
-    margin-bottom: calc(2*var(--nav-height));
+    margin-top: var(--nav-height);
+    margin-bottom: calc(3*var(--nav-height));
 }
 
 .hero__title {
@@ -291,6 +292,7 @@ ul, ol {
     }
 
     .hero__main {
+        margin-top: 0;
         margin-bottom: 0;
     }
 
