@@ -142,7 +142,8 @@ ul, ol {
 .hero__button--mywork {
     border-radius: 1.5em;
     padding: 0.5em 1.85em;
-    background: #59b959;
+    /*background: #59b959; PENSARLO */
+    background: #E16161;
     border: 0;
     color: white;
 }
@@ -225,9 +226,6 @@ ul, ol {
     background: #151515;
     width: 24rem;
     height: 13.5rem;
-}
-
-.image__fallback {
     color: white;
     font-weight: bold;
 }
