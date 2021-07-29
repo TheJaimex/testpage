@@ -93,6 +93,7 @@ ul, ol {
 .content {
     display: flex;
     flex-direction: column;
+    margin-top: var(--nav-height);
 }
 
 .projects, .contact {
@@ -115,6 +116,7 @@ ul, ol {
 .hero__main {
     display: flex;
     flex-direction: column;
+    margin-bottom: var(--nav-height);
 }
 
 .hero__title {
@@ -280,12 +282,12 @@ ul, ol {
         font-size: 16px;
     }
 
-    .content {
-        margin-top: var(--nav-height);
-    }
-
     .hero__content {
         justify-content: space-between;
+    }
+
+    .hero__main {
+        margin-bottom: 0;
     }
 
     .hero__title {
