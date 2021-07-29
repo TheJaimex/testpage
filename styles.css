@@ -229,7 +229,7 @@ ul, ol {
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 400px)  {
+@media screen and (max-width: 350px)  {
     html {
         font-size: 7.5px;
     }
@@ -246,9 +246,9 @@ ul, ol {
     }
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 700px) {
     html {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     #projectImage {
