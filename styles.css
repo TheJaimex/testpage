@@ -96,7 +96,7 @@ ul, ol {
     margin-top: var(--nav-height);
 }
 
-.projects, .contact {
+.contact {
     margin-top: 5em;
 }
 
@@ -235,7 +235,7 @@ ul, ol {
     }
 }
 
-@media screen and (min-width: 525px)  {
+@media screen and (min-width: 550px)  {
     html {
         font-size: 12.5px;
     }
@@ -280,6 +280,10 @@ ul, ol {
 
     html {
         font-size: 16px;
+    }
+
+    .projects, .contact {
+        margin-top: 5em;
     }
 
     .hero__content {
