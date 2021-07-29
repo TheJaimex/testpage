@@ -142,7 +142,7 @@ ul, ol {
 .hero__button--mywork {
     border-radius: 1.5em;
     padding: 0.5em 1.85em;
-    background: #E16161;
+    background: #59b959;
     border: 0;
     color: white;
 }
@@ -222,9 +222,51 @@ ul, ol {
 }
 
 #projectImage {
-    background: white;
+    background: #151515;
     width: 24rem;
     height: 13.5rem;
+}
+
+.image__fallback {
+    color: white;
+    font-weight: bold;
+}
+
+.projects__more {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: var(--projects-list-margin-between);
+}
+
+.projects__more::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: var(--project-separator-height);
+    border-radius: 0.5em;
+    background: #303030;
+    top: calc((var(--projects-list-margin-between)/-2) + (var(--project-separator-height)/-2));
+}
+
+.projects__more::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: var(--project-separator-height);
+    border-radius: 0.5em;
+    background: #303030;
+    bottom: calc((var(--projects-list-margin-between)/-2) + (var(--project-separator-height)/-2));
+}
+
+.projects__button--more {
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 1.5em;
+    padding: 0.6em 1.9em;
+    background: #FFCA4E;
+    border: 0;
+    color: black;
 }
 
 
