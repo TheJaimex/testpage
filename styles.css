@@ -2,7 +2,6 @@
 
 :root {
     --max-width: 2250px;
-    --min-width: 288px;
     --scrollbal-width: 16px;
 
 
@@ -55,7 +54,6 @@ body {
     background: #111111;
     height: 500vh;
     max-width: var(--max-width);
-    min-width: var(--min-width);
     margin: 0 auto;
 }
 
@@ -85,7 +83,6 @@ ul, ol {
     justify-content: space-between;
     align-items: center;
     max-width: var(--max-width);
-    min-width: var(--min-width);
     width: 100vw;
     height: var(--nav-height);
     background: #111111;
