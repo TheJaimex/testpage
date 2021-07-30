@@ -1,7 +1,7 @@
 /* MADE BY JAIME, 2021, COPYRIGHT: ALL RIGHTS RESERVED */
 
 :root {
-    --nav-height: 50px;
+    --nav-height: 55px;
     --nav-button-textColor: white;
 
 
@@ -76,7 +76,9 @@ ul, ol {
 }
 
 .nav__logo {
-    color: white;
+    font-size: 1.2rem;
+    color: rgb(32, 182, 219);
+    font-weight: 900;
 }
 
 .nav__buttons {
@@ -142,8 +144,7 @@ ul, ol {
 .hero__button--mywork {
     border-radius: 1.5em;
     padding: 0.5em 1.85em;
-    /*background: #59b959; PENSARLO */
-    background: #E16161;
+    background: #68bc6b;
     border: 0;
     color: white;
 }
@@ -164,7 +165,7 @@ ul, ol {
 }
 
 .hero__squares {
-    height: 42.5rem;
+    height: 40rem;
 }
 
 /* FEATURED PROJECTS SECTION */
@@ -213,13 +214,27 @@ ul, ol {
 .project__info {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    background: white;
     align-items: center;
+    flex-direction: column;
+    padding-top: 3em;
 }
 
-.project__banner {
-    height: fit-content;
+#projectNumber {
+    font-size: 3rem;
+    font-weight: 100;
+    color: #FFCA4E;
+    padding-bottom: 0.33em;
+}
+
+#projectName {
+    font-size: 3.5rem;
+    color: rgb(230, 230, 230);
+}
+
+#projectType {
+    color: rgb(163, 163, 163);
+    padding-top: 1em;
+    font-size: 1.5rem;
 }
 
 #projectImage {
@@ -314,7 +329,7 @@ ul, ol {
 @media screen and (min-width: 1250px) {
     :root {
         --white-space: 8rem;
-        /*--nav-height: 75px; PENSARLO porque quizás los botones sean muy peques*/
+        --nav-height: 75px;
         --project-separator-height: 0.2em;
         --projects-list-margin-between: 7.5em;
     }
@@ -372,6 +387,11 @@ ul, ol {
 
     .projects__project {
         flex-direction: row-reverse;
+    }
+
+    .project__info {
+        align-items: flex-start;
+        padding: 0 0 1em 5em;
     }
 
     #projectImage {
