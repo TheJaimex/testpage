@@ -1,8 +1,16 @@
 /* MADE BY JAIME, 2021, COPYRIGHT: ALL RIGHTS RESERVED */
 
 :root {
+    --max-width: 2250px;
+    --scrollbal-width: 15px;
+
+
     --nav-height: 55px;
     --nav-button-textColor: white;
+
+    --nav-button-inner-margin: 2em;
+    --nav-button-padding-horizontal: 0px;
+    --nav-button-padding-vertical: 0.5em;
 
 
     --white-space: 3.5rem;
@@ -41,6 +49,8 @@ html {
 body {
     background: #111111;
     height: 500vh;
+    max-width: var(--max-width);
+    margin: 0 auto;
 }
 
 
@@ -68,6 +78,7 @@ ul, ol {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: var(--max-width);
     width: 100vw;
     height: var(--nav-height);
     background: #111111;
@@ -228,11 +239,14 @@ ul, ol {
 
 #projectName {
     font-size: 3.5rem;
+    text-align: center;
     color: rgb(230, 230, 230);
+    width: 85%;
 }
 
 #projectType {
     color: rgb(163, 163, 163);
+    text-align: center;
     padding-top: 1em;
     font-size: 1.5rem;
 }
@@ -338,6 +352,11 @@ ul, ol {
         font-size: 16px;
     }
 
+
+    .nav {
+        padding-right: calc(var(--white-space) + var(--scrollbal-width) - var(--nav-button-padding-horizontal));
+    }
+
     .projects, .contact {
         margin-top: 5em;
     }
@@ -392,6 +411,10 @@ ul, ol {
     .project__info {
         align-items: flex-start;
         padding: 0 0 1em 5em;
+    }
+
+    #projectName, #projectType {
+        text-align: left;
     }
 
     #projectImage {
