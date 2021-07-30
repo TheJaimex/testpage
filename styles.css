@@ -280,6 +280,7 @@ ul, ol {
     border-radius: 0.5em;
     background: #303030;
     top: calc((var(--projects-list-margin-between)/-2) + (var(--project-separator-height)/-2));
+    left: 0;
 }
 
 .projects__more::after {
@@ -290,6 +291,7 @@ ul, ol {
     border-radius: 0.5em;
     background: #303030;
     bottom: calc((var(--projects-list-margin-between)/-2) + (var(--project-separator-height)/-2));
+    left: 0;
 }
 
 .projects__button--more {
