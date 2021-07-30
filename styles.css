@@ -263,7 +263,7 @@ ul, ol {
     position: relative;
     display: flex;
     justify-content: center;
-    margin: var(--projects-list-margin-between) auto 0 auto;
+    margin-top: var(--projects-list-margin-between);
 }
 
 .projects__more::before {
@@ -287,6 +287,7 @@ ul, ol {
 }
 
 .projects__button--more {
+    margin: 0 auto;
     font-size: 1.5rem;
     font-weight: bold;
     border-radius: 1.5em;
