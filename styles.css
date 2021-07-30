@@ -263,7 +263,7 @@ ul, ol {
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: var(--projects-list-margin-between);
+    margin: var(--projects-list-margin-between) auto 0 auto;
 }
 
 .projects__more::before {
