@@ -2,10 +2,14 @@
 
 :root {
     --max-width: 2250px;
-    --scrollbal-width: 15px;
+    --scrollbal-width: 16px;
 
 
     --nav-height: 55px;
+
+    --nav-logo-padding-horizontal: 0px;
+    --nav-logo-padding-vertical: 0px;
+
     --nav-button-textColor: white;
 
     --nav-button-inner-margin: 2em;
@@ -82,7 +86,8 @@ ul, ol {
     width: 100vw;
     height: var(--nav-height);
     background: #111111;
-    padding: 0 var(--white-space);
+    padding-left: calc(var(--white-space) - var(--nav-logo-padding-horizontal));
+    padding-right: calc(var(--white-space) - var(--nav-button-padding-horizontal));
     z-index: 200;
 }
 
@@ -262,7 +267,9 @@ ul, ol {
 .projects__more {
     position: relative;
     display: flex;
+    justify-content: center;
     margin-top: var(--projects-list-margin-between);
+    margin-bottom: calc(var(--projects-list-margin-between)/1.75);
 }
 
 .projects__more::before {
@@ -283,11 +290,9 @@ ul, ol {
     border-radius: 0.5em;
     background: #303030;
     bottom: calc((var(--projects-list-margin-between)/-2) + (var(--project-separator-height)/-2));
-    left: 0;
 }
 
 .projects__button--more {
-    margin: 0 auto;
     font-size: 1.5rem;
     font-weight: bold;
     border-radius: 1.5em;
@@ -339,7 +344,7 @@ ul, ol {
     }
 }
 
-/* DE OPCIONES MOVILES A PC */
+/* DE OPCIONES MOVILES A PC PEQUEÑO */
 
 @media screen and (min-width: 1250px) {
     :root {
@@ -351,11 +356,6 @@ ul, ol {
 
     html {
         font-size: 16px;
-    }
-
-
-    .nav {
-        padding-right: calc(var(--white-space) + var(--scrollbal-width) - var(--nav-button-padding-horizontal));
     }
 
     .projects, .contact {
@@ -425,9 +425,17 @@ ul, ol {
 }
 
 
+/* DE PC PEQUEÑO A PC NORMAL */
+
 @media screen and (min-width: 1400px) {
     html {
         font-size: 17.5px;
+    }
+
+
+    /* PENSAR DONDE PONER LA CORRECION DE LA SCROLLBAR (En que media query (este creo que está good porque en tablets no sale) */
+    .nav {
+        padding-right: calc(var(--white-space) + var(--scrollbal-width) - var(--nav-button-padding-horizontal));
     }
 
     .hero__title {
@@ -435,6 +443,8 @@ ul, ol {
     }
 }
 
+
+/* DE PC PEQUEÑO A PC GRANDE */
 
 @media screen and (min-width: 1750px) {
     html {
