@@ -16,9 +16,10 @@
 
     --nav-link-textColor: white;
 
-    --nav-link-inner-margin: 2em;
-    --nav-link-padding-horizontal: 0px;
-    --nav-link-padding-vertical: 0.5em;
+    --nav-link-inner-margin: 1.1em;
+    --nav-link-padding-horizontal: 0.5em;
+    --nav-link-padding-vertical: 0.35em;
+    --nav-span-padding-horizontal: 0.3em;
 
 
     --white-space: 3.5rem;
@@ -57,7 +58,7 @@ html {
 
 body {
     background: var(--background-color-primary);
-    height: 500vh;
+    height: 600vh;
     max-width: var(--max-width);
     min-width: var(--min-width);
     margin: 0 auto;
@@ -78,6 +79,7 @@ ul, ol {
     font-size: 2rem;
     font-weight: bolder;
     color: var(--section-title-color);
+    word-spacing: 0.25em;
 }
 
 /* BARRA NAVEGACION */
@@ -94,13 +96,13 @@ ul, ol {
     height: var(--nav-height);
     background: var(--background-color-primary);
     padding-left: calc(var(--white-space) - var(--nav-logo-padding-horizontal));
-    padding-right: calc(var(--white-space) - var(--nav-link-padding-horizontal));
+    padding-right: calc(var(--white-space) - var(--nav-link-inner-margin) - var(--nav-link-padding-horizontal) - var(--nav-span-padding-horizontal));
     z-index: 200;
 }
 
 .nav__logo {
     font-size: 1.2rem;
-    color: rgb(32, 182, 219);
+    color: #20b6db;
     font-weight: 900;
 }
 
@@ -111,6 +113,45 @@ ul, ol {
 
 .nav__link {
     color: var(--nav-link-textColor);
+    padding: var(--nav-link-padding-vertical) var(--nav-link-padding-horizontal);
+    margin: 0 var(--nav-link-inner-margin);
+}
+
+.nav__link > span {
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 0 var(--nav-span-padding-horizontal);
+}
+
+.nav__link:hover > span {
+    color: rgb(255, 162, 201);
+    transition: color 0.4s ease-out;
+}
+
+.nav__link > span::after {
+    content: '';
+    position: absolute;
+    width: 0px;
+    background: rgb(255, 162, 201);
+    height: 0.15em;
+    bottom: -0.3em;
+    left: 0;
+    transition: width 0.3s ease-out;
+    transform: rotate(-1.5deg);
+    border-radius: 0.1em;
+}
+
+.nav__link:hover > span::after {
+    width: 100%;
+}
+
+.nav__link:hover > .nav__link--active {
+    color: #dc82e7 !important;
+}
+
+.nav__link--active::after {
+    background: #dc82e7 !important;
 }
 
 /* CONTENIDO */
@@ -148,8 +189,8 @@ ul, ol {
 .hero__title {
     font-size: 3rem;
     font-weight: 900;
-    letter-spacing: 0.02em;
-    word-spacing: 0.01em;
+    letter-spacing: 0.01em;
+    word-spacing: 0.02em;
     text-align: center;
     color: var(--hero-title-color);
 }
@@ -167,20 +208,76 @@ ul, ol {
 }
 
 .hero__button--mywork {
+    position: relative;
     font-size: 1.6rem;
     border-radius: 1.5em;
     padding: 0.5em 1.8em;
-    background: #FFCA4E;
+    background: transparent;
     border: 0;
+    color: #FFCA4E;
+    transition: color 0.2s ease-in;
+}
+
+.hero__button--mywork:hover {
     color: black;
 }
 
+.hero__button--mywork::before {
+    position: absolute;
+    content: '';
+    background: #FFCA4E;
+    border-radius: 1.5em;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero__button--mywork::after {
+    position: absolute;
+    content: '';
+    background: #111111;
+    border-radius: 0.9em;
+    z-index: -2;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(0.91, 0.78);
+    transition: opacity 0.2s ease-in;
+    opacity: 1;
+}
+
+.hero__button--mywork:hover::after {
+    opacity: 0;
+}
+
 .hero__button--meetme {
+    position: relative;
     font-size: 1.3rem;
     color: #FFCA4E;
     padding: 0.5em 0.75em;
     margin-left: 1.75em;
     word-spacing: 0.1em;
+}
+
+.hero__button--meetme::after {
+    content: '';
+    border-radius: 0.1em;
+    position: absolute;
+    background: #FFCA4E;
+    height: 0.11em;
+    width: 100%;
+    left: 0;
+    bottom: 0.25em;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s ease-out;
+}
+
+.hero__button--meetme:hover::after {
+    transform: scaleX(0.88);
 }
 
 .hero__html {
@@ -193,7 +290,7 @@ ul, ol {
 }
 
 .hero__squares {
-    height: 40rem;
+    height: 39rem;
 }
 
 /* FEATURED PROJECTS SECTION */
@@ -310,15 +407,52 @@ ul, ol {
 }
 
 .projects__link {
+    position: relative;
     font-size: 1.75rem;
     font-weight: bold;
     border-radius: 1.5em;
     padding: 0.6em 1.9em;
-    background: #FFCA4E;
+    background: transparent;
     border: 0;
-    color: black;
+    color: #FFCA4E;
     word-spacing: 0.2em;
     letter-spacing: 0.04em;
+    transition: color 0.2s ease-in;
+}
+
+.projects__link:hover {
+    color: black;
+}
+
+.projects__link::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #FFCA4E;
+    top: 0;
+    left: 0;
+    border-radius: 1.5em;
+    z-index: -2;
+}
+
+.projects__link::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #111111;
+    top: 0;
+    left: 0;
+    border-radius: 1.5em;
+    z-index: -1;
+    transform: scale(0.93, 0.78);
+    transition: opacity 0.2s ease-in;
+    opacity: 1;
+}
+
+.projects__link:hover::after {
+    opacity: 0;
 }
 
 
@@ -347,7 +481,7 @@ ul, ol {
 }
 
 .areas__content {
-    padding: 2em var(--white-space);
+    padding: 0 var(--white-space);
     background: white;
 }
 
@@ -355,13 +489,14 @@ ul, ol {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 2em 0;
 }
 
 .areas__area {
     width: 17.5rem;
     height: 21rem;
     padding: 2.25em 1em;
-    margin: 1em;
+    margin: 1.2em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -391,10 +526,82 @@ ul, ol {
     flex-grow: 1;
 }
 
-.areas__contact {
+.areas__banner--bottom {
+    display: flex;
+    justify-content: center;
+    padding: 0 var(--white-space);
+}
+
+.areas__decoration--bottom {
+    flex-grow: 1;
+    border-radius: 1em;
+    height: 2.25rem;
+    background: black;
+}
+
+.contact__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--white-space);
     background: white;
-    text-align: center;
-    height: 2rem;
+    border-radius: 0 0 5em 5em;
+}
+
+.contact__main {
+    padding: 2em 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact__title {
+    font-size: 2.5rem;
+    word-spacing: 0.05em;
+}
+
+.contact__buttons {
+    padding: 2em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact__link--contact {
+    font-size: 1.5rem;
+    background: #b03fcc;
+    color: white;
+    font-weight: bold;
+    padding: 0.4em 1.1em;
+    border-radius: 1.1em;
+    margin-right: 1.2em;
+}
+
+.contact__link--email {
+    position: relative;
+    font-size: 1.35rem;
+    padding: 0.55em 1.35em;
+    color: #b03fcc;
+    border: 0;
+    background: white;
+}
+
+.contact__link--email::after {
+    content: '';
+    border-radius: 0.1em;
+    position: absolute;
+    background: #b03fcc;
+    height: 0.13em;
+    width: 100%;
+    left: 0;
+    bottom: 0.25em;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s ease-out;
+}
+
+.contact__link--email:hover::after {
+    transform: scaleX(0.8);
 }
 
 /* MEDIA QUERIES */
@@ -516,12 +723,21 @@ ul, ol {
         width: 40rem;
         height: 22.5rem;
     }
+
+
+    .contact__buttons {
+        justify-content: flex-start;
+    }
 }
 
 
 /* DE PC PEQUEÑO A PC NORMAL */
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1450px) {
+    :root {
+        --nav-height: 80px;
+    }
+
     html {
         font-size: 17.5px;
     }
@@ -529,18 +745,18 @@ ul, ol {
 
     /* PENSAR DONDE PONER LA CORRECION DE LA SCROLLBAR (En que media query (este creo que está good porque en tablets no sale) */
     .nav {
-        padding-right: calc(var(--white-space) + var(--scrollbal-width) - var(--nav-link-padding-horizontal));
+        padding-right: calc(var(--white-space) + var(--scrollbal-width) - var(--nav-link-padding-horizontal) - var(--nav-link-inner-margin) - var(--nav-span-padding-horizontal));
     }
 
     .hero__title {
-        font-size: 3.5rem;
+        font-size: 3.6rem;
     }
 }
 
 
 /* DE PC PEQUEÑO A PC GRANDE */
 
-@media screen and (min-width: 1750px) {
+@media screen and (min-width: 1800px) {
     html {
         font-size: 22.5px;
     }
