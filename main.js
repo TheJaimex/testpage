@@ -13,9 +13,6 @@ projectImages.forEach( function(projectImage) {
 
 // BOTON COPIAR EMAIL
 
-var copyEmailButton = document.querySelector("#copyEmailButton");
-copyEmailButton.addEventListener("click", copyEmailFromButton);
-
 function copyEmailFromButton() {
     const email = "testemail@gmail.com";
 
@@ -29,3 +26,6 @@ function copyEmailFromButton() {
         copyEmailButton.addEventListener("click", copyEmailFromButton);
     }, 2500);
 }
+
+var copyEmailButton = document.querySelector("#copyEmailButton");
+copyEmailButton.addEventListener("click", copyEmailFromButton);
