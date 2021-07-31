@@ -723,11 +723,6 @@ ul, ol {
         width: 40rem;
         height: 22.5rem;
     }
-
-
-    .contact__buttons {
-        justify-content: flex-start;
-    }
 }
 
 
