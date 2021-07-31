@@ -6,19 +6,23 @@
     --scrollbal-width: 16px;
 
 
+    --background-color-primary: #111111;
+
+
     --nav-height: 55px;
 
     --nav-logo-padding-horizontal: 0px;
     --nav-logo-padding-vertical: 0px;
 
-    --nav-button-textColor: white;
+    --nav-link-textColor: white;
 
-    --nav-button-inner-margin: 2em;
-    --nav-button-padding-horizontal: 0px;
-    --nav-button-padding-vertical: 0.5em;
+    --nav-link-inner-margin: 2em;
+    --nav-link-padding-horizontal: 0px;
+    --nav-link-padding-vertical: 0.5em;
 
 
     --white-space: 3.5rem;
+
 
     --primary-color: #111111;
     --secondary-color: #FFFFFF;
@@ -52,7 +56,7 @@ html {
 }
 
 body {
-    background: #111111;
+    background: var(--background-color-primary);
     height: 500vh;
     max-width: var(--max-width);
     min-width: var(--min-width);
@@ -88,9 +92,9 @@ ul, ol {
     min-width: var(--min-width);
     width: 100vw;
     height: var(--nav-height);
-    background: #111111;
+    background: var(--background-color-primary);
     padding-left: calc(var(--white-space) - var(--nav-logo-padding-horizontal));
-    padding-right: calc(var(--white-space) - var(--nav-button-padding-horizontal));
+    padding-right: calc(var(--white-space) - var(--nav-link-padding-horizontal));
     z-index: 200;
 }
 
@@ -100,13 +104,13 @@ ul, ol {
     font-weight: 900;
 }
 
-.nav__buttons {
+.nav__links {
     display: flex;
     list-style: none;
 }
 
-.nav__button {
-    color: var(--nav-button-textColor);
+.nav__link {
+    color: var(--nav-link-textColor);
 }
 
 /* CONTENIDO */
@@ -117,11 +121,11 @@ ul, ol {
     margin-top: var(--nav-height);
 }
 
-.contact {
+.areas {
     margin-top: 5em;
 }
 
-.hero__content, .projects__content, .contact__content {
+.hero__content, .projects__content, .areas__content {
     padding: 0 var(--white-space);
 }
 
@@ -144,6 +148,8 @@ ul, ol {
 .hero__title {
     font-size: 3rem;
     font-weight: 900;
+    letter-spacing: 0.02em;
+    word-spacing: 0.01em;
     text-align: center;
     color: var(--hero-title-color);
 }
@@ -156,22 +162,25 @@ ul, ol {
 }
 
 .hero__button {
-    font-size: 1.5rem;
     font-weight: bold;
+    letter-spacing: 0.02em;
 }
 
 .hero__button--mywork {
+    font-size: 1.6rem;
     border-radius: 1.5em;
-    padding: 0.5em 1.85em;
-    background: #68bc6b;
+    padding: 0.5em 1.8em;
+    background: #FFCA4E;
     border: 0;
-    color: white;
+    color: black;
 }
 
 .hero__button--meetme {
+    font-size: 1.3rem;
     color: #FFCA4E;
-    padding: 0.25em 0.5em;
+    padding: 0.5em 0.75em;
     margin-left: 1.75em;
+    word-spacing: 0.1em;
 }
 
 .hero__html {
@@ -198,14 +207,14 @@ ul, ol {
 }
 
 .projects__decoration--left {
-    background: #111111;
+    background: var(--background-color-primary);
     flex-grow: 1;
     border-radius: 0 0.75em 0.75em 0;
     margin-right: 2em;
 }
 
 .projects__decoration--right {
-    background: #111111;
+    background: var(--background-color-primary);
     flex-grow: 1;
     border-radius: 0.75em 0 0 0.75em;
     margin-left: 2em;
@@ -243,17 +252,20 @@ ul, ol {
     font-weight: 100;
     color: #FFCA4E;
     padding-bottom: 0.33em;
+    letter-spacing: 0.05em;
 }
 
 #projectName {
     font-size: 3.5rem;
     text-align: center;
-    color: rgb(230, 230, 230);
+    color: #e6e6e6;
     width: 85%;
+    letter-spacing: 0.025em;
+    word-spacing: 0.075em;
 }
 
 #projectType {
-    color: rgb(163, 163, 163);
+    color: #a3a3a3;
     text-align: center;
     padding-top: 1em;
     font-size: 1.5rem;
@@ -297,16 +309,93 @@ ul, ol {
     left: 0;
 }
 
-.projects__button--more {
-    font-size: 1.5rem;
+.projects__link {
+    font-size: 1.75rem;
     font-weight: bold;
     border-radius: 1.5em;
     padding: 0.6em 1.9em;
     background: #FFCA4E;
     border: 0;
     color: black;
+    word-spacing: 0.2em;
+    letter-spacing: 0.04em;
 }
 
+
+/* AREAS SECTION */
+
+.areas__banner {
+    display: flex;
+    background: white;
+    padding: 2.25rem 0;
+}
+
+.areas__decoration--left {
+    flex-grow: 1;
+    background: var(--background-color-primary);
+    border-radius: 0 0.75em 0.75em 0;
+}
+
+.areas__title {
+    padding: 0 1.2em;
+}
+
+.areas__decoration--right {
+    flex-grow: 1;
+    background: var(--background-color-primary);
+    border-radius: 0.75em 0 0 0.75em;
+}
+
+.areas__content {
+    padding: 2em var(--white-space);
+    background: white;
+}
+
+.areas__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.areas__area {
+    width: 17.5rem;
+    height: 21rem;
+    padding: 2.25em 1em;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFCA4E;
+    border-radius: 2em;
+    box-shadow: 0.5em 0.3em rgb(255, 188, 33);
+}
+
+.area__image {
+    width: 50%;
+    height: 6rem;
+    background: white;
+}
+
+.area__name {
+    font-size: 1.75rem;
+    font-weight: bold;
+    padding: 1em 0 0.75em 0;
+    letter-spacing: 0.05em;
+}
+
+.area__description {
+    text-align: center;
+    letter-spacing: 0.04em;
+    width: 75%;
+    color: #303030;
+    flex-grow: 1;
+}
+
+.areas__contact {
+    background: white;
+    text-align: center;
+    height: 2rem;
+}
 
 /* MEDIA QUERIES */
 
@@ -363,7 +452,7 @@ ul, ol {
         font-size: 16px;
     }
 
-    .projects, .contact {
+    .projects, .areas {
         margin-top: 5em;
     }
 
@@ -440,7 +529,7 @@ ul, ol {
 
     /* PENSAR DONDE PONER LA CORRECION DE LA SCROLLBAR (En que media query (este creo que está good porque en tablets no sale) */
     .nav {
-        padding-right: calc(var(--white-space) + var(--scrollbal-width) - var(--nav-button-padding-horizontal));
+        padding-right: calc(var(--white-space) + var(--scrollbal-width) - var(--nav-link-padding-horizontal));
     }
 
     .hero__title {
