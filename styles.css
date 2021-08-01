@@ -570,12 +570,13 @@ ul, ol {
 .contact__link--contact {
     background: #FFCA4E;
     color: #111111;
-    padding: 0.55em 4em;
+    padding: 0.55em 3.3em;
     border-radius: 1.1em;
     margin-right: 1.2em;
     font-weight: bold;
     box-shadow: 0.23em -0.18em rgb(255, 188, 33);
     transition: box-shadow 0.09s ease-in;
+    text-align: center;
 }
 
 .contact__link--contact:hover {
