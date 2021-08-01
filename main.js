@@ -15,17 +15,29 @@ projectImages.forEach( function(projectImage) {
 
 function copyEmailFromButton() {
     const email = "testemail@gmail.com";
+    
+    try {
+        navigator.clipboard.writeText(email);
 
-    navigator.clipboard.writeText(email).catch((error) => { alert(`Error copying: ${error}. The email is ${email}`) });
-
-    copyEmailButton.innerHTML = "Copied!";
-    copyEmailButton.removeEventListener("click", copyEmailFromButton);
-
-    setTimeout( function() {
-        copyEmailButton.innerHTML = "Copy Email";
-        copyEmailButton.addEventListener("click", copyEmailFromButton);
-    }, 2500);
+        copyEmailButton.innerHTML = "Copied!";
+        copyEmailButton.removeEventListener("click", copyEmailFromButton);
+    
+        setTimeout( function() {
+            copyEmailButton.innerHTML = "Copy Email";
+            copyEmailButton.addEventListener("click", copyEmailFromButton);
+        }, 2500);
+    }
+    catch (error) {
+        alert(`Error copying: ${error}.\n\nThe contact email is: ${email}`);
+    }
 }
 
 var copyEmailButton = document.querySelector("#copyEmailButton");
 copyEmailButton.addEventListener("click", copyEmailFromButton);
+
+
+// PONER AÑO EN LO DE COPYRIGHT
+
+var fecha = new Date();
+
+document.getElementById("footerYear").innerHTML = fecha.getFullYear();
